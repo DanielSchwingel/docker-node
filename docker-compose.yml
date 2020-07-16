@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+    server:
+        build:
+            context: .
+            dockerfile: node.dockerfile
+        image: daniels/docker-node
+        container_name: docker-node
+        command: npm start
+        ports: 
+            - "3333:3333"
+        volumes: 
+            - .:/usr/app
